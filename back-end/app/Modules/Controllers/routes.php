@@ -3,6 +3,7 @@
  * Usuario: Lucas
  * Date: 15/11/2021
  */
+use Illuminate\Support\Facades\Route;
 
 Route::group([
     'prefix'     => 'modules/controllers',

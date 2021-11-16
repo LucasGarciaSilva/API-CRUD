@@ -6,18 +6,12 @@
 
 namespace App\Modules\Models;
 
-
 use Illuminate\Database\Eloquent\Model;
 
 class Marca extends Model
 {
     public $timestamps = false;
-    protected $table = 'idMarca';
-
-    /////////// RELACIONAMENTOS //////////
-
-    // muitas marcas para um  carro
-
-    ////////////////////////////////////
+    protected $table = 'marca';
+    protected $primaryKey = 'idMarca';
 
 }

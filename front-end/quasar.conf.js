@@ -9,7 +9,6 @@
 /* eslint-env node */
 const ESLintPlugin = require('eslint-webpack-plugin')
 const { configure } = require('quasar/wrappers');
-const { default: axios } = require('src/boot/axios');
 
 module.exports = configure(function (ctx) {
   return {
@@ -23,7 +22,6 @@ module.exports = configure(function (ctx) {
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/boot-files
     boot: [
-      axios
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -82,7 +80,7 @@ module.exports = configure(function (ctx) {
       proxy: {
         // proxy all requests starting with /api to jsonplaceholder
         "/api": {
-          target: "http://localhost:8080",
+          target: "http://127.0.0.1:8000",
           changeOrigin: true,
           pathRewrite: {
             "^/api": ""

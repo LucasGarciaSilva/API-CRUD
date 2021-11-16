@@ -6,7 +6,7 @@
         title="Veiculos"
         :rows="rows"
         :columns="columns"
-        row-key="name"
+        row-key="desc"
         :filter="filter"
         hide-header
       >
@@ -33,15 +33,17 @@ export default defineComponent({
     return {
       filter: ref(''),
       columns: [
-        { name: 'marca', align: 'center', label: 'Marca', field: 'name', sortable: true },
+        { name: 'idMarca', align: 'center', label: 'Id', field: 'idMarca', sortable: true },
+        { name: 'desc', align: 'center', label: 'Marca', field: 'desc', sortable: true },
       ],
       rows: []
     }
   },
   methods:{
     getMarcas (){
-      veiculosService.getMarcas.then(Response =>{
-        this.rows = Response
+      veiculosService.getMarcas().then(Response => {
+        this.rows = Response.data
+        console.log(this.rows)
       })
     }
   },

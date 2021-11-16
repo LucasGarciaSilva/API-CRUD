@@ -3,14 +3,11 @@ import axios from 'axios'
 export default {
   getMarcas: function (params) {
     return axios.get('api/modules/controllers/marcas')
-      .then((response) => {
+    .then((response) => {
         return response
-      })
-      .catch((error) => {
+      }).catch((error) => {
         return error
       })
-
   }
-
 }
 

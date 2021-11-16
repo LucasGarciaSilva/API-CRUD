@@ -12,16 +12,16 @@ use Illuminate\Http\Request;
 
 class MarcasController extends Controller
 {
-    private $struture;
 
-    public function getMarcas(Request $request)
+    public function getMarcas()
     {
         try
         {
-            $this->struture = Marca::get();
-            return $this->struture;
 
-        }catch (\Exception $exception)
+            return  Marca::all();
+
+        }
+        catch (\Exception $exception)
         {
             return ['status' => false, 'message' => $exception];
         }
